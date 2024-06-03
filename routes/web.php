@@ -1,6 +1,13 @@
 <?php
 
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SubscriberController;
+use App\Http\Controllers\ThemeController;
+use App\Models\Blog;
+use App\Models\Contact;
+use App\Models\Subscriber;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,9 +21,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+Route::controller(ThemeController::class)->name('theme.')->group(function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('/category', 'category')->name('category');
 });
+
+// Blog Routes
+Route::resource('blog', BlogController::class);
+
+
+Route::controller(ContactController::class)->name('contact.')->group(function () {
+    Route::get('/contact', 'create')->name('create');
+    Route::post('/contact', 'store')->name('store');
+});
+Route::post('subscriber-store', [SubscriberController::class, 'store'])->name('subscriber.store');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
