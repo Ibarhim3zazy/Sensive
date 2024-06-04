@@ -1,4 +1,5 @@
 @php
+use App\Models\Blog;
 $categories = App\Models\Category::get();
 @endphp
 <!-- Start Blog Post Siddebar -->
@@ -31,16 +32,15 @@ $categories = App\Models\Category::get();
             <ul class="cat-list mt-20">
                 @foreach ($categories as $category)
                 <li>
-                    <a href="#" class="d-flex justify-content-between">
+                    <a href="{{ route('theme.category', $category->id) }}" class="d-flex justify-content-between">
                         <p>{{ $category->name }}</p>
-                        <p>(03)</p>
+                        <p>{{ count(Blog::where('category_id', $category->id)->get()) }}</p>
                     </a>
                 </li>
                 @endforeach
             </ul>
         </div>
         @endif
-
         <div class="single-sidebar-widget popular-post-widget">
             <h4 class="single-sidebar-widget__title">Recent Post</h4>
             <div class="popular-post-list">

@@ -12,10 +12,14 @@ class Blog extends Model
     protected $guarded = ['id', 'created_at', 'updated_at'];
 
     public function category() {
-        $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class);
     }
 
     public function user() {
-        $this->belongsTo(User::class);
+        return $this->belongsTo(User::class);
+    }
+
+    public function comments() {
+        return $this->hasMany(Comment::class);
     }
 }

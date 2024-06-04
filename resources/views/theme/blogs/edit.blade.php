@@ -1,26 +1,27 @@
 @extends('theme.app')
-@section('title', 'Add new blog')
+@section('title', 'Edit blog')
 
 @section('content')
 
-@include('theme.partials.hero', ['title' => 'Add New Blog'])
+@include('theme.partials.hero', ['title' => 'Edit Blog'])
 
 <!-- ================ Register section start ================= -->
 <section class="section-margin--small section-margin">
     <div class="container">
         <div class="row">
             <div class="col-12">
-                @session('blogCreateStatus')
-                <div class="alert alert-success">{{ session('blogCreateStatus') }}</div>
+                @session('blogUpdateStatus')
+                <div class="alert alert-success">{{ session('blogUpdateStatus') }}</div>
                 @endsession
-                <form action="{{ route('blog.store') }}" class="form-contact contact_form" method="post"
-                    id="contactForm" novalidate="novalidate" enctype="multipart/form-data">
+                <form action="{{ route('blog.update', ['blog' => $blog]) }}" class="form-contact contact_form"
+                    method="post" id="contactForm" novalidate="novalidate" enctype="multipart/form-data">
                     @csrf
+                    @method('PUT')
                     <div class="row">
                         <div class="col-12">
                             <div class="form-group">
                                 <input class="form-control border" name="title" type="text"
-                                    placeholder="Enter your blog title" value="{{ old('title') }}">
+                                    placeholder="Enter your blog title" value="{{ $blog->title }}">
                                 <x-input-error :messages="$errors->get('title')" class="mt-2" />
                             </div>
                             <div class=" form-group">
@@ -33,7 +34,8 @@
                                     @if (count($categories) > 0)
                                     <option value="">Select Category</option>
                                     @foreach ($categories as $category)
-                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    <option value="{{ $category->id }}" @if ($category->id == $blog->category_id)
+                                        selected @endif>{{ $category->name }}</option>
                                     @endforeach
                                     @endif
                                 </select>
@@ -41,7 +43,7 @@
                             </div>
                             <div class="form-group">
                                 <textarea class="w-100 p-2 border" name="description"
-                                    placeholder="Enter your description" rows="5">{{ old('description') }}</textarea>
+                                    placeholder="Enter your description" rows="5">{{ $blog->description }}</textarea>
                                 <x-input-error :messages="$errors->get('description')" class="mt-2" />
                             </div>
                         </div>

@@ -1,11 +1,13 @@
 <?php
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SubscriberController;
 use App\Http\Controllers\ThemeController;
 use App\Models\Blog;
+use App\Models\Comment;
 use App\Models\Contact;
 use App\Models\Subscriber;
 use Illuminate\Support\Facades\Route;
@@ -24,11 +26,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::controller(ThemeController::class)->name('theme.')->group(function () {
     Route::get('/', 'index')->name('index');
-    Route::get('/category', 'category')->name('category');
+    Route::get('/category/{id}', 'category')->name('category');
 });
 
 // Blog Routes
 Route::resource('blog', BlogController::class);
+Route::post('/comment/store', [CommentController::class, 'store'])->name('comment.store');
+
 
 
 Route::controller(ContactController::class)->name('contact.')->group(function () {
