@@ -48,7 +48,7 @@ class BlogController extends Controller
         // get image
         $image = $request->image;
         // change it's currant name
-        $newImageName = time() . '-' . $image->getClientOriginalName();
+        $newImageName = time() . '-' . Hash::make($image->getClientOriginalName());
         // move image to my project
         $image->storeAs('images', $newImageName, 'public');
         // save new name to database record

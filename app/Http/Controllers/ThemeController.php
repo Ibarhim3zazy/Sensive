@@ -10,7 +10,8 @@ class ThemeController extends Controller
 {
     public function index() {
         $blogs = Blog::orderBy('id', 'desc')->paginate('4');
-        return view('theme.index', compact('blogs'));
+        $sliderBlogs = Blog::latest()->take('5')->get();
+        return view('theme.index', compact('blogs', 'sliderBlogs'));
     }
     public function category($id) {
         $blogs = Blog::where('category_id', $id)->orderBy('id', 'desc')->paginate('8');

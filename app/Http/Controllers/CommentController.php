@@ -15,9 +15,4 @@ class CommentController extends Controller
         return back()->with('storeCommentStatus', 'your Comment has been published successfully');
     }
 
-    public function show($id) {
-        
-        
-    }
-
 }
