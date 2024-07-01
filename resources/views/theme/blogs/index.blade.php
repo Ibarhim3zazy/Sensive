@@ -25,7 +25,7 @@
                         @if (count($blogs) > 0)
                         @foreach ($blogs as $blog)
                         <tr>
-                            <th scope="row">{{ $loop->iteration }}</th>
+                            <th scope="row">{{ $blogs->firstItem() + $loop->index }}</th>
                             <td>{{ $blog->title }}</td>
                             <td>
                                 <a href="{{ route('blog.edit', ['blog' => $blog]) }}"

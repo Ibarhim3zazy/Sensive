@@ -11,7 +11,9 @@
         <div class="row">
             <div class="col-lg-8">
                 <div class="main_blog_details">
-                    <img class="img-fluid" src="{{ asset('storage/images/'.$blog->image) }}" alt="">
+                    <img class="img-fluid"
+                        src="{{ file_exists('storage/images/'.$blog->image) ? asset('storage/images/'.$blog->image) : asset($blog->image) }}"
+                        alt="">
                     <a href="#">
                         <h4>{{ $blog->title }}</h4>
                     </a>

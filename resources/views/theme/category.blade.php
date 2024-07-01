@@ -17,7 +17,8 @@
                     <div class="col-md-6">
                         <div class="single-recent-blog-post card-view">
                             <div class="thumb">
-                                <img class="card-img rounded-0" src="{{ asset('storage/images/'.$blog->image) }}"
+                                <img class="card-img rounded-0"
+                                    src="{{ file_exists('storage/images/'.$blog->image) ? asset('storage/images/'.$blog->image) : asset($blog->image) }}"
                                     alt="">
                                 <ul class="thumb-info">
                                     <li><a href="#"><i class="ti-user"></i>{{ $blog->user->name }}</a></li>
@@ -28,7 +29,7 @@
                                 <a href="{{ route('blog.show', ['blog' => $blog]) }}">
                                     <h3>{{ $blog->title }}</h3>
                                 </a>
-                                <p>{{ $blog->description }}</p>
+                                <p>{{ Str::limit($blog->description, 100, '...') }}</p>
                                 <a class="button" href="{{ route('blog.show', ['blog' => $blog]) }}">Read More <i
                                         class="ti-arrow-right"></i></a>
                             </div>

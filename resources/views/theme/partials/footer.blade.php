@@ -65,16 +65,16 @@
                     <p>Let us be social</p>
                     <div class="footer-social d-flex align-items-center">
                         <a href="#">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.facebook.com/Ibrahim3zazy">
                             <i class="fab fa-facebook-f"></i>
                         </a>
                         <a href="#">
-                            <i class="fab fa-twitter"></i>
+                            <i class="fab fa-github"></i>
                         </a>
-                        <a href="#">
-                            <i class="fab fa-dribbble"></i>
-                        </a>
-                        <a href="#">
-                            <i class="fab fa-behance"></i>
+                        <a href="https://wa.me/+2001145452440">
+                            <i class="fab fa-whatsapp"></i>
                         </a>
                     </div>
                 </div>
@@ -86,7 +86,8 @@
                 Copyright &copy;<script>
                     document.write(new Date().getFullYear());
                 </script> All rights reserved | This template is made with <i class="fa fa-heart"
-                    aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                    aria-hidden="true"></i> by <a href="https://ibarhim3zazy.github.io/My_Contacts/"
+                    target="_blank">Ibrahim 3zazy</a>
                 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
         </div>
