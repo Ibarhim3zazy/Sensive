@@ -16,4 +16,4 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 
 ## License
 
-The Furni project is open-sourced software licensed under the [I3 license](https://bit.ly/3MCy2Y6).
+The Sensive project is open-sourced software licensed under the [I3 license](https://bit.ly/3MCy2Y6).
