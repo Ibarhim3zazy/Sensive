@@ -4,7 +4,7 @@
 
 First Clone the project in your machine by this command
 
--   git clone https://github.com/Ibarhim3zazy/Evara.git
+-   git clone https://github.com/Ibarhim3zazy/Sensive.git
 
 and then run this commands in project folder
 
