@@ -28,7 +28,8 @@
                 @foreach ($sliderBlogs as $blog)
                 <div class="card blog__slide text-center">
                     <div class="blog__slide__img vh-10">
-                        <img class="card-img rounded-0" height="150" src="{{ asset('storage/images/'. $blog->image) }}"
+                        <img class="card-img rounded-0" height="150"
+                            src="{{ file_exists('storage/images/'.$blog->image) ? asset('storage/images/'.$blog->image) : asset($blog->image) }}"
                             alt="">
                     </div>
                     <div class="blog__slide__content">
