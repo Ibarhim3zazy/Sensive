@@ -1,19 +1,52 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a>Sensive</p>
+## Crud system Project Repo
 
-## How to start the project
+**Created By :** Ibrahim Azazy
+**Email :** ebrahim3zazy@gmail.com
 
-First Clone the project in your machine by this command
+This is the main readme file for the code used in Crud system Project
 
--   git clone https://github.com/Ibarhim3zazy/Sensive.git
+## Installation
 
-and then run this commands in project folder
+To get started, clone this repository.
 
--   composer install
--   mv .env.example .env
--   php artisan key:generate
+```
+git clone https://github.com/Ibarhim3zazy/Sensive.git
+```
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Next, copy your `.env.example` file as `.env` and configure your Database connection.
 
-## License
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=YOUR-DATABASE-NAME
+DB_USERNAME=YOUR-DATABASE-USERNAME
+DB_PASSWORD=YOUR-DATABASE-PASSWROD
+```
 
-The Sensive project is open-sourced software licensed under the [I3 license](https://bit.ly/3MCy2Y6).
+## Run Packages and helpers
+
+You have to all used packages and load helpers as below.
+
+```
+composer install
+npm install
+npm run build
+```
+
+## Generate new application key
+
+You have to generate new application key as below.
+
+```
+php artisan key:generate
+```
+
+## Run Migrations and seeders
+
+You have to run all the migration files included with the project and also run seeders as below.
+
+```
+php artisan migrate
+php artisan db:seed
+```
